@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>X-LingualTTS: Expressive Cross-Lingual TTS</title>
+
+  <meta name="description" content="We've presented Clarity, a minimalist and elegant website template for AI research." />
+  <meta name="robots" content="all" />
+  <meta content="en_EN" property="og:locale" />
+  <meta content="website" property="og:type" />
+  <meta content="https://shikun.io/projects/clarity" property="og:url" />
+  <meta content="Clarity" property="og:title" />
+  <meta content="Website Template for AI Research" property="og:description" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image:src" content="assets/figures/clarity.png" />
+
+  <link rel="stylesheet" href="assets/stylesheets/main_free.css" />
+  <link rel="stylesheet" href="clarity/clarity.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/foundation.min.css" />
+  <link rel="stylesheet" href="assets/fontawesome-free-6.6.0-web/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Page-wide style fixes -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+    }
+
+    .container.blog {
+      width: 100%;
+      max-width: 100%;
+      padding: 40px;
+      box-sizing: border-box;
+    }
+
+    .blog-title {
+      width: 100%;
+    }
+
+    .blog-intro {
+      max-width: 100%;
+    }
+
+    .abstract {
+      text-align: justify;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+      table-layout: auto;
+      min-width: 1300px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      word-break: break-word;
+    }
+
+    video, audio {
+      width: 100%;
+      max-width: 350px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .model-name {
+      font-weight: bold;
+      background-color: #fafafa;
+    }
+
+    .scroll-container {
+      overflow-x: auto;
+      width: 100%;
+    }
+
+    h1.title {
+      font-size: 28px;
+    }
+
+    h4 {
+      margin-top: 40px;
+    }
+
+    .info {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Title Section -->
+  <div class="container blog" id="first-content" style="background-color: #E0E4E6;">
+    <div class="blog-title no-cover">
+      <div class="blog-intro">
+        <h1 class="title">
+          X-LingualTTS: Expressive Cross-Lingual TTS for Indian Languages via Semantic Style Matching and Chain-of-Thought Prompt Injection
+        </h1>
+        <p class="author">Anonymous Submission</p>
+        <p class="abstract">
+          Expressive speech synthesis is essential for applications such as dubbing, storytelling, and interactive media, yet remains underexplored in low-resource, multilingual contexts such as Indian languages. In this paper, we propose X-LingualTTS, a cross-lingual expressive text-to-speech (TTS) framework for five diverse Indian languages, namely, Hindi, Indian English, Bengali, Tamil, and Telugu. Our approach introduces three key innovations: (1) a set of style-adaptive and shift layers that condition the speech generation process on both linguistic and acoustic prosody cues; (2) chain-of-thought prompt injection, where a large language model generates non-vocalized expressive tags (e.g., &lt;Laugh&gt;, &lt;Sigh&gt;, &lt;Groan&gt;) to serve as soft emotional controllers; and (3) a semantic consistency loss that aligns prosodic style embeddings derived from text and audio. We evaluate X-LingualTTS in a cross-lingual prosody transfer setting, where expressive speech in Indian languages is synthesized using reference speech in English. Experimental results demonstrate that the system produces perceptually rich and emotionally coherent speech, even under zero-shot language conditions. This work advances the modeling of controllable, cross-modal expressive TTS for linguistically diverse and low-resource environments.
+        </p>
+
+        <div class="info">
+          <a class="button icon" style="background-color: rgba(255, 255, 255, 0.1)"> Paper <i class="fa-solid fa-book-open"></i></a>
+          &nbsp;&nbsp;
+          <a class="button icon" style="background-color: rgba(255, 255, 255, 0.1)">Code <i class="fa-solid fa-laptop-code"></i></a>
+        </div>
+
+        <div class="info">
+          <p>Submitted at AAAI 2026</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 style="text-align: center; margin-top: 40px;">Cross-lingual Demo Samples</h2>
+
+
+<div style="overflow-x: auto;">
+  <table style="width: 100%; max-width: 1000px; margin: auto; table-layout: fixed; font-size: 14px;">
+    <colgroup>
+      <col style="width: 10%;">
+      <col style="width: 25%;">
+      <col style="width: 13%;">
+      <col style="width: 13%;">
+      <col style="width: 13%;">
+      <col style="width: 13%;">
+      <col style="width: 13%;">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>Language</th>
+        <th>Input Text</th>
+        <th>Reference</th>
+        <th>Indic-F5TTS</th>
+        <th>GPT-SoVITS</th>
+        <th>Ablation</th>
+        <th>Proposed X-Lingual</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Hindi</td>
+        <td style="text-align: left;">हम तीनों बिल्कुल तीन मशहूर तलवारबाज़ों जैसे हैं।</td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/Ref_1.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/I_Hindi_1.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/G_Hindi_1.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/A_Hindi_1.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/X_Hindi_1.wav"></audio></td>
+      </tr>
+      <!-- Repeat for other languages -->
+       <tr>
+        <td>Hindi</td>
+        <td style="text-align: left;">धन्यवाद, ये बढ़िया हैं! क्या इन्हें सूची में जोड़ सकते हैं?</td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/Ref_2.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/I_Hindi_2.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/G_Hindi_2.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/A_Hindi_2.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/X_Hindi_2.wav"></audio></td>
+      </tr>
+
+      <tr>
+      <td>Bengali</td>
+        <td style="text-align: left;">আমরা তিনজন মাস্কেটিয়ারসের মতো একসঙ্গে থাকি</td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/Ref_1.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/I_Bengali_1.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/G_Bengali_1.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/A_Bengali_1.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/X_Bengali_1.wav"></audio></td>
+      </tr>
+      <!-- Repeat for other languages -->
+       <tr>
+        <td>Bengali</td>
+        <td style="text-align: left;">ধন্যবাদ, দারুন লাগলো! তালিকায় যোগ করা যাবে?</td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/Ref_2.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/I_Bengali_2.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/G_Bengali_2.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/A_Bengali_2.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/X_Bengali_2.wav"></audio></td>
+      </tr>
+
+      <tr>  
+         <td>Tamil</td>
+        <td style="text-align: left;"> நாம் மூவரும் மஸ்கடீயர்கள் போல இணைந்திருக்கிறோம்</td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/Ref_1.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/I_Tamil_1.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/G_Tamil_1.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/A_Tamil_1.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/X_Tamil_1.wav"></audio></td>
+      </tr>
+      <!-- Repeat for other languages -->
+       <tr>
+        <td>Tamil</td>
+        <td style="text-align: left;">நன்றி, அருமை! பட்டியலில் சேர்க்க முடியுமா?</td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/Ref_2.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/I_Tamil_2.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/G_Tamil_2.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/A_Tamil_2.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/X_Tamil_2.wav"></audio></td>
+      </tr>
+
+
+       <tr>
+        <td>Telugu</td>
+        <td style="text-align: left;">మేము ముగ్గురం మస్కటీర్ల వలె కలసి ఉన్నాం.</td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/Ref_1.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/I_Telugu_1.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/G_Telugu_1.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/A_Telugu_1.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/X_Telugu_1.wav"></audio></td>
+      </tr>
+      <!-- Repeat for other languages -->
+       <tr>
+        <td>Telugu</td>
+        <td style="text-align: left;">ధన్యవాదాలు, బాగున్నాయి! జాబితాలో పెడతావా?</td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/Ref_2.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/I_Telugu_2.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/G_Telugu_2.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/A_Telugu_2.wav"></audio></td>
+        <td><audio controls style="width: 100%;" src="Demo_Samples/X_Telugu_2.wav"></audio></td>
+      </tr>
+      
+
+    </tbody>
+  </table>
+</div>
+
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>This website is built on the <a href="https://shikun.io/projects/clarity">Clarity Template</a>, designed by <a href="https://shikun.io/">Shikun Liu</a>.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="clarity/clarity.js"></script>
+  <script src="assets/scripts/main.js"></script>
+</body>
+</html>
